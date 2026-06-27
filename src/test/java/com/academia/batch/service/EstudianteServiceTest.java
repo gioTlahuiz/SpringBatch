@@ -2,12 +2,11 @@ package com.academia.batch.service;
 
 import com.academia.batch.repository.EstudianteEntity;
 import com.academia.batch.repository.EstudianteRepository;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.testng.annotations.Test;
-
 
 import java.util.List;
 
@@ -15,13 +14,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class EstudianteServiceTest {
-    //creamos los mocks para simular
+class EstudianteServiceTest {
+
     @Mock
     private EstudianteRepository repository;     // repositorio falso
 
     @InjectMocks
-    private EstudianteService service;
+    private EstudianteService service;           // recibe el mock por constructor
 
     @Test
     void cuentaSoloLosAprobados() {
